@@ -5,7 +5,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="styles.css">
             <style>
-        #filterInput {
+        .filter {
             margin-bottom: 10px;
             padding: 5px;
             width: 200px;
@@ -17,14 +17,14 @@
         
         
 <article><h1>Trustbit LLM Benchmarks - Enterprise Workload</h1>
-<p>2024-08-30</p>
+<p>2024-12-12</p>
 <p>Table cells score model in each product capability from 0 to 100. Higher is better.</p><ul>
 <li><b>docs</b> - working with large documents and knowledge bases</li><li><b>crm</b> - capabilities for working with product catalogues and marketplaces</li><li><b>integrate</b> - ability to interact with external APIs, services and plugins</li><li><b>marketing</b> - assistance in marketing activities: brainstorming, idea refinement, text generation</li><li><b>reason</b> - ability to reason within the provided context</li><li><b>code</b> - code generation and reasoning</li><li><b>final</b> - final model score across all categories</li><li><b>Cost</b> is estimated cost of running workfload. For local models we take into account GPU hardware and model speed. Not used in scoring.</li><li><b>Speed</b> is estimated speed of of the model, in requests per second. Higher is better. Not used in scoring.</li></ul>
 <p>Colors are adjusted, based on the best performing score in each category.</p><h3>Licenses</h3><ul><li>☁️- cloud models with proprietary license</li><li>✅- open source models that could be run locally without restrictions</li><li>🦙- local models with Llama2 license</li></ul>
-    <input type="text" id="filterInput" placeholder="Filter table..."><table id='benchmarkTable'><thead>
+    <input class="filter" type="text" id="filterInput" placeholder="Filter table...">    <input class="filter" type="text" id="highlightInput" placeholder="Highlight models..."><label><input type="checkbox" id="toggleCostColumn"> Hide Cost Column</label><label><input type="checkbox" id="toggleSpeedColumn"> Hide Speed Column</label><table id='benchmarkTable'><thead>
 <tr>
 <th>model</th>
-<th>code</th>
+<th>Code+Eng</th>
 <th>crm</th>
 <th>docs</th>
 <th>integrate</th>
@@ -36,455 +36,851 @@
 </tr></thead>
 <tbody>
 <tr>
-<td>GPT-4o v1/2024-05-13 ☁️</td>
-<td style='background:#B6EECF'>90</td>
+<td>1. GPT o1-preview v1/2024-09-12 ☁️</td>
 <td style='background:#B6EECF'>95</td>
-<td style='background:#B6EECF'>100</td>
-<td style='background:#B6EECF'>90</td>
-<td style='background:#F9FDE1'>82</td>
-<td style='background:#B6EECF'>75</td>
-<td style='background:#B6EECF'>89</td>
-<td>1.21 €</td>
-<td>1.50 rps</td>
+<td style='background:#B6EECF'>92</td>
+<td style='background:#B6EECF'>94</td>
+<td style='background:#B6EECF'>95</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#B6EECF'>87</td>
+<td style='background:#B6EECF'>92</td>
+<td>52.32 €</td>
+<td>0.08 rps</td>
 </tr>
 <tr>
-<td>GPT-4 Turbo v5/2024-04-09 ☁️</td>
+<td>2. GPT o1-mini v1/2024-09-12 ☁️</td>
+<td style='background:#B6EECF'>93</td>
+<td style='background:#B6EECF'>96</td>
+<td style='background:#B6EECF'>94</td>
+<td style='background:#F9FDE1'>83</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#B6EECF'>87</td>
+<td style='background:#B6EECF'>89</td>
+<td>8.15 €</td>
+<td>0.16 rps</td>
+</tr>
+<tr>
+<td>3. GPT-4o v3/2024-11-20 ☁️</td>
+<td style='background:#B6EECF'>86</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#B6EECF'>94</td>
+<td style='background:#B6EECF'>95</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#B6EECF'>89</td>
+<td>0.63 €</td>
+<td>1.14 rps</td>
+</tr>
+<tr>
+<td>4. GPT-4o v1/2024-05-13 ☁️</td>
+<td style='background:#B6EECF'>90</td>
+<td style='background:#B6EECF'>96</td>
+<td style='background:#B6EECF'>100</td>
+<td style='background:#B6EECF'>92</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#B6EECF'>88</td>
+<td>1.21 €</td>
+<td>1.44 rps</td>
+</tr>
+<tr>
+<td>5. Google Gemini 1.5 Pro v2  ☁️</td>
+<td style='background:#B6EECF'>86</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#B6EECF'>94</td>
+<td style='background:#B6EECF'>99</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#B6EECF'>88</td>
+<td>1.00 €</td>
+<td>1.18 rps</td>
+</tr>
+<tr>
+<td>6. GPT-4 Turbo v5/2024-04-09 ☁️</td>
 <td style='background:#B6EECF'>86</td>
 <td style='background:#B6EECF'>99</td>
 <td style='background:#B6EECF'>98</td>
-<td style='background:#B6EECF'>93</td>
+<td style='background:#B6EECF'>96</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#F9FDE1'>45</td>
+<td style='background:#FFE9EA'>43</td>
 <td style='background:#B6EECF'>85</td>
 <td>2.45 €</td>
 <td>0.84 rps</td>
 </tr>
 <tr>
-<td>Google Gemini Pro 1.5 0801 ☁️</td>
+<td>7. Google Gemini 2.0 Flash Exp ☁️</td>
+<td style='background:#F9FDE1'>63</td>
+<td style='background:#B6EECF'>96</td>
+<td style='background:#B6EECF'>100</td>
+<td style='background:#B6EECF'>100</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#F9FDE1'>62</td>
 <td style='background:#B6EECF'>84</td>
-<td style='background:#B6EECF'>92</td>
+<td>0.03 €</td>
+<td>0.85 rps</td>
+</tr>
+<tr>
+<td>8. Google Gemini Exp 1121 ☁️</td>
+<td style='background:#F9FDE1'>70</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#B6EECF'>95</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#B6EECF'>84</td>
+<td>0.89 €</td>
+<td>0.49 rps</td>
+</tr>
+<tr>
+<td>9. GPT-4o v2/2024-08-06 ☁️</td>
 <td style='background:#B6EECF'>90</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#F9FDE1'>86</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#F9FDE1'>59</td>
+<td style='background:#B6EECF'>83</td>
+<td>0.63 €</td>
+<td>1.49 rps</td>
+</tr>
+<tr>
+<td>10. Google Gemini 1.5 Pro 0801 ☁️</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#B6EECF'>92</td>
+<td style='background:#F9FDE1'>79</td>
 <td style='background:#B6EECF'>100</td>
 <td style='background:#F9FDE1'>70</td>
-<td style='background:#B6EECF'>72</td>
-<td style='background:#B6EECF'>85</td>
-<td>1.48 €</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#B6EECF'>83</td>
+<td>0.90 €</td>
 <td>0.83 rps</td>
 </tr>
 <tr>
-<td>GPT-4o v3/dyn-2024-08-13 ☁️</td>
-<td style='background:#B6EECF'>90</td>
-<td style='background:#B6EECF'>97</td>
-<td style='background:#B6EECF'>100</td>
-<td style='background:#F9FDE1'>67</td>
+<td>11. Qwen 2.5 72B Instruct ⚠️</td>
 <td style='background:#F9FDE1'>79</td>
-<td style='background:#B6EECF'>73</td>
-<td style='background:#B6EECF'>84</td>
-<td>0.64 €</td>
-<td>1.21 rps</td>
-</tr>
-<tr>
-<td>GPT-4o v2/2024-08-06 ☁️</td>
-<td style='background:#B6EECF'>86</td>
-<td style='background:#F9FDE1'>89</td>
+<td style='background:#B6EECF'>92</td>
+<td style='background:#B6EECF'>94</td>
 <td style='background:#B6EECF'>97</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>59</td>
 <td style='background:#F9FDE1'>82</td>
-<td style='background:#F9FDE1'>82</td>
-<td style='background:#F9FDE1'>56</td>
-<td style='background:#B6EECF'>82</td>
-<td>0.63 €</td>
-<td>1.30 rps</td>
+<td>0.10 €</td>
+<td>0.66 rps</td>
 </tr>
 <tr>
-<td>GPT-4 v1/0314 ☁️</td>
+<td>12. Llama 3.1 405B Hermes 3🦙</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#B6EECF'>93</td>
+<td style='background:#F9FDE1'>89</td>
+<td style='background:#B6EECF'>98</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#F9FDE1'>53</td>
+<td style='background:#F9FDE1'>81</td>
+<td>0.54 €</td>
+<td>0.49 rps</td>
+</tr>
+<tr>
+<td>13. Claude 3.5 Sonnet v2 ☁️</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#B6EECF'>93</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>57</td>
+<td style='background:#F9FDE1'>81</td>
+<td>0.95 €</td>
+<td>0.09 rps</td>
+</tr>
+<tr>
+<td>14. GPT-4 v1/0314 ☁️</td>
 <td style='background:#B6EECF'>90</td>
 <td style='background:#F9FDE1'>88</td>
 <td style='background:#B6EECF'>98</td>
-<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>73</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#F9FDE1'>50</td>
-<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>45</td>
+<td style='background:#F9FDE1'>80</td>
 <td>7.04 €</td>
 <td>1.31 rps</td>
 </tr>
 <tr>
-<td>Claude 3.5 Sonnet ☁️</td>
-<td style='background:#F9FDE1'>72</td>
-<td style='background:#F9FDE1'>83</td>
-<td style='background:#B6EECF'>91</td>
-<td style='background:#F9FDE1'>78</td>
+<td>15. X-AI Grok 2 ⚠️</td>
+<td style='background:#F9FDE1'>63</td>
+<td style='background:#B6EECF'>93</td>
+<td style='background:#F9FDE1'>87</td>
+<td style='background:#B6EECF'>90</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#F9FDE1'>58</td>
 <td style='background:#F9FDE1'>80</td>
-<td style='background:#F9FDE1'>59</td>
-<td style='background:#F9FDE1'>77</td>
-<td>0.94 €</td>
-<td>0.09 rps</td>
+<td>1.03 €</td>
+<td>0.31 rps</td>
 </tr>
 <tr>
-<td>GPT-4 v2/0613 ☁️</td>
+<td>16. GPT-4 v2/0613 ☁️</td>
 <td style='background:#B6EECF'>90</td>
 <td style='background:#F9FDE1'>83</td>
 <td style='background:#B6EECF'>95</td>
-<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>73</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#F9FDE1'>50</td>
-<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>45</td>
+<td style='background:#F9FDE1'>79</td>
 <td>7.04 €</td>
 <td>2.16 rps</td>
 </tr>
 <tr>
-<td>GPT-4 Turbo v4/0125-preview ☁️</td>
-<td style='background:#F9FDE1'>66</td>
-<td style='background:#B6EECF'>97</td>
-<td style='background:#B6EECF'>100</td>
-<td style='background:#F9FDE1'>71</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#F9FDE1'>45</td>
-<td style='background:#F9FDE1'>76</td>
-<td>2.45 €</td>
-<td>0.84 rps</td>
-</tr>
-<tr>
-<td>GPT-4o Mini ☁️</td>
+<td>17. GPT-4o Mini ☁️</td>
 <td style='background:#F9FDE1'>63</td>
 <td style='background:#F9FDE1'>87</td>
-<td style='background:#F9FDE1'>82</td>
-<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>80</td>
+<td style='background:#F9FDE1'>73</td>
 <td style='background:#B6EECF'>100</td>
-<td style='background:#F9FDE1'>67</td>
-<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>65</td>
+<td style='background:#F9FDE1'>78</td>
 <td>0.04 €</td>
 <td>1.46 rps</td>
 </tr>
 <tr>
-<td>Meta Llama3.1 405B Instruct🦙</td>
-<td style='background:#B6EECF'>81</td>
-<td style='background:#B6EECF'>93</td>
-<td style='background:#B6EECF'>95</td>
-<td style='background:#F9FDE1'>55</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#F9FDE1'>46</td>
-<td style='background:#F9FDE1'>74</td>
-<td>2.39 €</td>
-<td>1.16 rps</td>
+<td>18. Claude 3.5 Sonnet v1 ☁️</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>83</td>
+<td style='background:#F9FDE1'>89</td>
+<td style='background:#F9FDE1'>87</td>
+<td style='background:#F9FDE1'>80</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>78</td>
+<td>0.94 €</td>
+<td>0.09 rps</td>
 </tr>
 <tr>
-<td>Claude 3 Opus ☁️</td>
+<td>19. Claude 3 Opus ☁️</td>
 <td style='background:#F9FDE1'>69</td>
 <td style='background:#F9FDE1'>88</td>
 <td style='background:#B6EECF'>100</td>
-<td style='background:#F9FDE1'>53</td>
-<td style='background:#F9FDE1'>76</td>
-<td style='background:#F9FDE1'>59</td>
 <td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>77</td>
 <td>4.69 €</td>
 <td>0.41 rps</td>
 </tr>
 <tr>
-<td>Mistral Large 123B v2/2407 ☁️</td>
-<td style='background:#F9FDE1'>68</td>
-<td style='background:#F9FDE1'>79</td>
-<td style='background:#F9FDE1'>73</td>
+<td>20. Meta Llama3.1 405B Instruct🦙</td>
+<td style='background:#F9FDE1'>81</td>
+<td style='background:#B6EECF'>93</td>
+<td style='background:#B6EECF'>92</td>
 <td style='background:#F9FDE1'>75</td>
 <td style='background:#F9FDE1'>75</td>
-<td style='background:#B6EECF'>71</td>
-<td style='background:#F9FDE1'>74</td>
-<td>0.86 €</td>
-<td>1.02 rps</td>
+<td style='background:#F9FDE1'>48</td>
+<td style='background:#F9FDE1'>77</td>
+<td>2.39 €</td>
+<td>1.16 rps</td>
 </tr>
 <tr>
-<td>GPT-4 Turbo v3/1106-preview ☁️</td>
+<td>21. GPT-4 Turbo v4/0125-preview ☁️</td>
+<td style='background:#F9FDE1'>66</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#B6EECF'>100</td>
+<td style='background:#F9FDE1'>83</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#F9FDE1'>77</td>
+<td>2.45 €</td>
+<td>0.84 rps</td>
+</tr>
+<tr>
+<td>22. Google LearnLM 1.5 Pro Experimental ⚠️</td>
+<td style='background:#F9FDE1'>48</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#F9FDE1'>85</td>
+<td style='background:#B6EECF'>96</td>
+<td style='background:#F9FDE1'>64</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>77</td>
+<td>0.31 €</td>
+<td>0.83 rps</td>
+</tr>
+<tr>
+<td>23. GPT-4 Turbo v3/1106-preview ☁️</td>
 <td style='background:#F9FDE1'>66</td>
 <td style='background:#F9FDE1'>75</td>
 <td style='background:#B6EECF'>98</td>
-<td style='background:#F9FDE1'>52</td>
-<td style='background:#F9FDE1'>88</td>
-<td style='background:#F9FDE1'>62</td>
 <td style='background:#F9FDE1'>73</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#F9FDE1'>60</td>
+<td style='background:#F9FDE1'>76</td>
 <td>2.46 €</td>
 <td>0.68 rps</td>
 </tr>
 <tr>
-<td>Google Gemini Pro 1.5 0514 ☁️</td>
-<td style='background:#F9FDE1'>73</td>
-<td style='background:#B6EECF'>96</td>
-<td style='background:#F9FDE1'>84</td>
+<td>24. Google Gemini Exp 1206 ☁️</td>
+<td style='background:#F9FDE1'>52</td>
 <td style='background:#B6EECF'>100</td>
-<td style='background:#FFE9EA'>25</td>
-<td style='background:#F9FDE1'>62</td>
-<td style='background:#F9FDE1'>73</td>
-<td>2.01 €</td>
-<td>0.92 rps</td>
+<td style='background:#F9FDE1'>85</td>
+<td style='background:#F9FDE1'>77</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>76</td>
+<td>0.88 €</td>
+<td>0.16 rps</td>
 </tr>
 <tr>
-<td>Meta Llama 3.1 70B Instruct f16🦙</td>
+<td>25. Qwen 2.5 32B Coder Instruct ⚠️</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#B6EECF'>94</td>
+<td style='background:#B6EECF'>98</td>
+<td style='background:#B6EECF'>98</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>46</td>
+<td style='background:#F9FDE1'>76</td>
+<td>0.05 €</td>
+<td>0.82 rps</td>
+</tr>
+<tr>
+<td>26. DeepSeek v2.5 236B ⚠️</td>
+<td style='background:#F9FDE1'>57</td>
+<td style='background:#F9FDE1'>80</td>
+<td style='background:#B6EECF'>91</td>
+<td style='background:#F9FDE1'>80</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#F9FDE1'>57</td>
+<td style='background:#F9FDE1'>75</td>
+<td>0.03 €</td>
+<td>0.42 rps</td>
+</tr>
+<tr>
+<td>27. Meta Llama 3.1 70B Instruct f16🦙</td>
 <td style='background:#F9FDE1'>74</td>
 <td style='background:#F9FDE1'>89</td>
 <td style='background:#B6EECF'>90</td>
-<td style='background:#F9FDE1'>55</td>
 <td style='background:#F9FDE1'>75</td>
-<td style='background:#F9FDE1'>46</td>
-<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>48</td>
+<td style='background:#F9FDE1'>75</td>
 <td>1.79 €</td>
 <td>0.90 rps</td>
 </tr>
 <tr>
-<td>Google Gemini Pro 1.5 0409 ☁️</td>
+<td>28. Google Gemini 1.5 Flash v2  ☁️</td>
+<td style='background:#F9FDE1'>64</td>
+<td style='background:#B6EECF'>96</td>
+<td style='background:#F9FDE1'>89</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>81</td>
+<td style='background:#F9FDE1'>44</td>
+<td style='background:#F9FDE1'>75</td>
+<td>0.06 €</td>
+<td>2.01 rps</td>
+</tr>
+<tr>
+<td>29. Google Gemini 1.5 Pro 0409 ☁️</td>
 <td style='background:#F9FDE1'>68</td>
 <td style='background:#B6EECF'>97</td>
 <td style='background:#B6EECF'>96</td>
-<td style='background:#F9FDE1'>63</td>
+<td style='background:#F9FDE1'>80</td>
 <td style='background:#F9FDE1'>75</td>
-<td style='background:#FFE9EA'>28</td>
-<td style='background:#F9FDE1'>71</td>
-<td>1.84 €</td>
+<td style='background:#FFE9EA'>26</td>
+<td style='background:#F9FDE1'>74</td>
+<td>0.95 €</td>
 <td>0.59 rps</td>
 </tr>
 <tr>
-<td>GPT-3.5 v2/0613 ☁️</td>
+<td>30. Meta Llama 3 70B Instruct🦙</td>
+<td style='background:#F9FDE1'>81</td>
+<td style='background:#F9FDE1'>83</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#F9FDE1'>67</td>
+<td style='background:#F9FDE1'>81</td>
+<td style='background:#F9FDE1'>45</td>
+<td style='background:#F9FDE1'>73</td>
+<td>0.06 €</td>
+<td>0.85 rps</td>
+</tr>
+<tr>
+<td>31. GPT-3.5 v2/0613 ☁️</td>
 <td style='background:#F9FDE1'>68</td>
 <td style='background:#F9FDE1'>81</td>
 <td style='background:#F9FDE1'>73</td>
-<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>87</td>
 <td style='background:#F9FDE1'>81</td>
-<td style='background:#F9FDE1'>48</td>
-<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>50</td>
+<td style='background:#F9FDE1'>73</td>
 <td>0.34 €</td>
 <td>1.46 rps</td>
 </tr>
 <tr>
-<td>Google Gemini Pro 1.0 ☁️</td>
+<td>32. Amazon Nova Lite ⚠️</td>
+<td style='background:#F9FDE1'>67</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#B6EECF'>94</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#F9FDE1'>73</td>
+<td>0.02 €</td>
+<td>2.19 rps</td>
+</tr>
+<tr>
+<td>33. Mistral Large 123B v2/2407 ☁️</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>79</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>70</td>
+<td style='background:#F9FDE1'>72</td>
+<td>0.57 €</td>
+<td>1.02 rps</td>
+</tr>
+<tr>
+<td>34. Google Gemini Flash 1.5 8B ☁️</td>
+<td style='background:#F9FDE1'>70</td>
+<td style='background:#B6EECF'>93</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>67</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>48</td>
+<td style='background:#F9FDE1'>72</td>
+<td>0.01 €</td>
+<td>1.19 rps</td>
+</tr>
+<tr>
+<td>35. Google Gemini 1.5 Pro 0514 ☁️</td>
+<td style='background:#F9FDE1'>73</td>
+<td style='background:#B6EECF'>96</td>
+<td style='background:#F9FDE1'>79</td>
+<td style='background:#B6EECF'>100</td>
+<td style='background:#FFE9EA'>25</td>
+<td style='background:#F9FDE1'>60</td>
+<td style='background:#F9FDE1'>72</td>
+<td>1.07 €</td>
+<td>0.92 rps</td>
+</tr>
+<tr>
+<td>36. Google Gemini 1.5 Flash 0514 ☁️</td>
+<td style='background:#FFE9EA'>32</td>
+<td style='background:#B6EECF'>97</td>
+<td style='background:#B6EECF'>100</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>72</td>
+<td>0.06 €</td>
+<td>1.77 rps</td>
+</tr>
+<tr>
+<td>37. Google Gemini 1.0 Pro ☁️</td>
 <td style='background:#F9FDE1'>66</td>
 <td style='background:#F9FDE1'>86</td>
-<td style='background:#F9FDE1'>85</td>
-<td style='background:#F9FDE1'>60</td>
+<td style='background:#F9FDE1'>83</td>
+<td style='background:#F9FDE1'>79</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#FFE9EA'>26</td>
-<td style='background:#F9FDE1'>68</td>
-<td>0.09 €</td>
+<td style='background:#FFE9EA'>28</td>
+<td style='background:#F9FDE1'>71</td>
+<td>0.37 €</td>
 <td>1.36 rps</td>
 </tr>
 <tr>
-<td>GPT-3.5 v3/1106 ☁️</td>
+<td>38. Meta Llama 3.2 90B Vision🦙</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#F9FDE1'>87</td>
+<td style='background:#F9FDE1'>77</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#FFE9EA'>32</td>
+<td style='background:#F9FDE1'>71</td>
+<td>0.23 €</td>
+<td>1.10 rps</td>
+</tr>
+<tr>
+<td>39. GPT-3.5 v3/1106 ☁️</td>
 <td style='background:#F9FDE1'>68</td>
 <td style='background:#F9FDE1'>70</td>
 <td style='background:#F9FDE1'>71</td>
-<td style='background:#F9FDE1'>63</td>
+<td style='background:#F9FDE1'>81</td>
 <td style='background:#F9FDE1'>78</td>
-<td style='background:#F9FDE1'>59</td>
-<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>71</td>
 <td>0.24 €</td>
 <td>2.33 rps</td>
 </tr>
 <tr>
-<td>GPT-3.5 v4/0125 ☁️</td>
+<td>40. Claude 3.5 Haiku ☁️</td>
+<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>80</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>70</td>
+<td>0.32 €</td>
+<td>1.24 rps</td>
+</tr>
+<tr>
+<td>41. Meta Llama 3.3 70B Instruct🦙</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>77</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>46</td>
+<td style='background:#F9FDE1'>70</td>
+<td>0.10 €</td>
+<td>0.71 rps</td>
+</tr>
+<tr>
+<td>42. GPT-3.5 v4/0125 ☁️</td>
 <td style='background:#F9FDE1'>63</td>
 <td style='background:#F9FDE1'>87</td>
-<td style='background:#F9FDE1'>72</td>
-<td style='background:#F9FDE1'>60</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>77</td>
 <td style='background:#F9FDE1'>78</td>
-<td style='background:#F9FDE1'>47</td>
-<td style='background:#F9FDE1'>68</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#F9FDE1'>70</td>
 <td>0.12 €</td>
 <td>1.43 rps</td>
 </tr>
 <tr>
-<td>Google Gemini 1.5 Flash 0514 ☁️</td>
-<td style='background:#FFE9EA'>32</td>
-<td style='background:#B6EECF'>97</td>
-<td style='background:#B6EECF'>100</td>
-<td style='background:#F9FDE1'>56</td>
-<td style='background:#F9FDE1'>72</td>
-<td style='background:#F9FDE1'>41</td>
-<td style='background:#F9FDE1'>66</td>
-<td>0.09 €</td>
-<td>1.77 rps</td>
-</tr>
-<tr>
-<td>Cohere Command R+ ☁️</td>
+<td>43. Cohere Command R+ ☁️</td>
 <td style='background:#F9FDE1'>63</td>
 <td style='background:#F9FDE1'>80</td>
 <td style='background:#F9FDE1'>76</td>
-<td style='background:#FFE9EA'>49</td>
+<td style='background:#F9FDE1'>72</td>
 <td style='background:#F9FDE1'>70</td>
-<td style='background:#F9FDE1'>59</td>
-<td style='background:#F9FDE1'>66</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>70</td>
 <td>0.83 €</td>
 <td>1.90 rps</td>
 </tr>
 <tr>
-<td>Qwen1.5 32B Chat f16 ⚠️</td>
+<td>44. Mistral Large 123B v3/2411 ☁️</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>64</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#F9FDE1'>51</td>
+<td style='background:#F9FDE1'>70</td>
+<td>0.56 €</td>
+<td>0.66 rps</td>
+</tr>
+<tr>
+<td>45. Qwen1.5 32B Chat f16 ⚠️</td>
 <td style='background:#F9FDE1'>70</td>
 <td style='background:#B6EECF'>90</td>
 <td style='background:#F9FDE1'>82</td>
-<td style='background:#F9FDE1'>56</td>
+<td style='background:#F9FDE1'>76</td>
 <td style='background:#F9FDE1'>78</td>
-<td style='background:#FFE9EA'>15</td>
-<td style='background:#F9FDE1'>65</td>
+<td style='background:#FFE9EA'>20</td>
+<td style='background:#F9FDE1'>69</td>
 <td>0.97 €</td>
 <td>1.66 rps</td>
 </tr>
 <tr>
-<td>GPT-3.5-instruct 0914 ☁️</td>
-<td style='background:#F9FDE1'>47</td>
-<td style='background:#B6EECF'>92</td>
-<td style='background:#F9FDE1'>71</td>
-<td style='background:#F9FDE1'>60</td>
-<td style='background:#F9FDE1'>88</td>
+<td>46. Gemma 2 27B IT ⚠️</td>
+<td style='background:#F9FDE1'>61</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>87</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>89</td>
 <td style='background:#FFE9EA'>32</td>
-<td style='background:#F9FDE1'>65</td>
-<td>0.35 €</td>
-<td>2.15 rps</td>
-</tr>
-<tr>
-<td>Mistral Nemo 12B v1/2407 ☁️</td>
-<td style='background:#F9FDE1'>54</td>
-<td style='background:#F9FDE1'>58</td>
-<td style='background:#F9FDE1'>52</td>
-<td style='background:#B6EECF'>97</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#F9FDE1'>50</td>
-<td style='background:#F9FDE1'>65</td>
+<td style='background:#F9FDE1'>69</td>
 <td>0.07 €</td>
-<td>1.22 rps</td>
+<td>0.90 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B OpenChat-3.5 v3 0106 f16 ✅</td>
+<td>47. Mistral 7B OpenChat-3.5 v3 0106 f16 ✅</td>
 <td style='background:#F9FDE1'>68</td>
 <td style='background:#F9FDE1'>87</td>
-<td style='background:#F9FDE1'>69</td>
-<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>67</td>
+<td style='background:#F9FDE1'>74</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#FFE9EA'>23</td>
-<td style='background:#F9FDE1'>64</td>
+<td style='background:#FFE9EA'>25</td>
+<td style='background:#F9FDE1'>68</td>
 <td>0.32 €</td>
 <td>3.39 rps</td>
 </tr>
 <tr>
-<td>Meta Llama 3 8B Instruct f16🦙</td>
+<td>48. Meta Llama 3 8B Instruct f16🦙</td>
 <td style='background:#F9FDE1'>79</td>
 <td style='background:#F9FDE1'>62</td>
-<td style='background:#F9FDE1'>71</td>
-<td style='background:#FFE9EA'>49</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>70</td>
 <td style='background:#F9FDE1'>80</td>
-<td style='background:#F9FDE1'>42</td>
-<td style='background:#F9FDE1'>64</td>
+<td style='background:#FFE9EA'>41</td>
+<td style='background:#F9FDE1'>67</td>
 <td>0.32 €</td>
 <td>3.33 rps</td>
 </tr>
 <tr>
-<td>GPT-3.5 v1/0301 ☁️</td>
-<td style='background:#F9FDE1'>55</td>
-<td style='background:#F9FDE1'>82</td>
-<td style='background:#F9FDE1'>71</td>
-<td style='background:#F9FDE1'>67</td>
-<td style='background:#F9FDE1'>82</td>
-<td style='background:#FFE9EA'>24</td>
-<td style='background:#F9FDE1'>63</td>
-<td>0.35 €</td>
-<td>4.12 rps</td>
-</tr>
-<tr>
-<td>Gemma 7B OpenChat-3.5 v3 0106 f16 ✅</td>
+<td>49. Gemma 7B OpenChat-3.5 v3 0106 f16 ✅</td>
 <td style='background:#F9FDE1'>63</td>
 <td style='background:#F9FDE1'>67</td>
-<td style='background:#F9FDE1'>86</td>
-<td style='background:#FFE9EA'>33</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#F9FDE1'>58</td>
 <td style='background:#F9FDE1'>81</td>
-<td style='background:#F9FDE1'>48</td>
-<td style='background:#F9FDE1'>63</td>
+<td style='background:#F9FDE1'>46</td>
+<td style='background:#F9FDE1'>67</td>
 <td>0.21 €</td>
 <td>5.09 rps</td>
 </tr>
 <tr>
-<td>Llama 3 8B OpenChat-3.6 20240522 f16 ✅</td>
+<td>50. GPT-3.5-instruct 0914 ☁️</td>
+<td style='background:#FFE9EA'>47</td>
+<td style='background:#B6EECF'>92</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#FFE9EA'>33</td>
+<td style='background:#F9FDE1'>66</td>
+<td>0.35 €</td>
+<td>2.15 rps</td>
+</tr>
+<tr>
+<td>51. Amazon Nova Pro ⚠️</td>
+<td style='background:#F9FDE1'>64</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#F9FDE1'>79</td>
+<td style='background:#F9FDE1'>52</td>
+<td style='background:#FFE9EA'>41</td>
+<td style='background:#F9FDE1'>66</td>
+<td>0.22 €</td>
+<td>1.34 rps</td>
+</tr>
+<tr>
+<td>52. GPT-3.5 v1/0301 ☁️</td>
+<td style='background:#F9FDE1'>55</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>81</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#FFE9EA'>26</td>
+<td style='background:#F9FDE1'>66</td>
+<td>0.35 €</td>
+<td>4.12 rps</td>
+</tr>
+<tr>
+<td>53. Llama 3 8B OpenChat-3.6 20240522 f16 ✅</td>
 <td style='background:#F9FDE1'>76</td>
 <td style='background:#F9FDE1'>51</td>
 <td style='background:#F9FDE1'>76</td>
-<td style='background:#FFE9EA'>45</td>
+<td style='background:#F9FDE1'>65</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#F9FDE1'>39</td>
-<td style='background:#F9FDE1'>62</td>
+<td style='background:#FFE9EA'>38</td>
+<td style='background:#F9FDE1'>66</td>
 <td>0.28 €</td>
 <td>3.79 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B OpenChat-3.5 v1 f16 ✅</td>
+<td>54. Mistral 7B OpenChat-3.5 v1 f16 ✅</td>
 <td style='background:#F9FDE1'>58</td>
 <td style='background:#F9FDE1'>72</td>
 <td style='background:#F9FDE1'>72</td>
-<td style='background:#FFE9EA'>49</td>
+<td style='background:#F9FDE1'>71</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#FFE9EA'>31</td>
-<td style='background:#F9FDE1'>62</td>
+<td style='background:#FFE9EA'>33</td>
+<td style='background:#F9FDE1'>66</td>
 <td>0.49 €</td>
 <td>2.20 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B OpenChat-3.5 v2 1210 f16 ✅</td>
+<td>55. Mistral 7B OpenChat-3.5 v2 1210 f16 ✅</td>
 <td style='background:#F9FDE1'>63</td>
 <td style='background:#F9FDE1'>73</td>
 <td style='background:#F9FDE1'>72</td>
-<td style='background:#FFE9EA'>45</td>
+<td style='background:#F9FDE1'>66</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#FFE9EA'>28</td>
-<td style='background:#F9FDE1'>61</td>
+<td style='background:#FFE9EA'>30</td>
+<td style='background:#F9FDE1'>65</td>
 <td>0.32 €</td>
 <td>3.40 rps</td>
 </tr>
 <tr>
-<td>Starling 7B-alpha f16 ⚠️</td>
+<td>56. Qwen 2.5 7B Instruct ⚠️</td>
+<td style='background:#F9FDE1'>48</td>
+<td style='background:#F9FDE1'>77</td>
+<td style='background:#F9FDE1'>80</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>47</td>
+<td style='background:#F9FDE1'>65</td>
+<td>0.07 €</td>
+<td>1.25 rps</td>
+</tr>
+<tr>
+<td>57. Starling 7B-alpha f16 ⚠️</td>
 <td style='background:#F9FDE1'>58</td>
 <td style='background:#F9FDE1'>66</td>
-<td style='background:#F9FDE1'>68</td>
-<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>67</td>
+<td style='background:#F9FDE1'>73</td>
 <td style='background:#F9FDE1'>88</td>
-<td style='background:#FFE9EA'>36</td>
-<td style='background:#F9FDE1'>61</td>
+<td style='background:#FFE9EA'>34</td>
+<td style='background:#F9FDE1'>64</td>
 <td>0.58 €</td>
 <td>1.85 rps</td>
 </tr>
 <tr>
-<td>Claude 3 Haiku ☁️</td>
+<td>58. Mistral Nemo 12B v1/2407 ☁️</td>
+<td style='background:#F9FDE1'>54</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>51</td>
+<td style='background:#B6EECF'>99</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>49</td>
+<td style='background:#F9FDE1'>64</td>
+<td>0.03 €</td>
+<td>1.22 rps</td>
+</tr>
+<tr>
+<td>59. Meta Llama 3.2 11B Vision🦙</td>
+<td style='background:#F9FDE1'>70</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>65</td>
+<td style='background:#F9FDE1'>70</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#FFE9EA'>36</td>
+<td style='background:#F9FDE1'>64</td>
+<td>0.04 €</td>
+<td>1.49 rps</td>
+</tr>
+<tr>
+<td>60. Llama 3 8B Hermes 2 Theta🦙</td>
+<td style='background:#F9FDE1'>61</td>
+<td style='background:#F9FDE1'>73</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>85</td>
+<td style='background:#FFE9EA'>16</td>
+<td style='background:#F9FDE1'>64</td>
+<td>0.05 €</td>
+<td>0.55 rps</td>
+</tr>
+<tr>
+<td>61. Claude 3 Haiku ☁️</td>
 <td style='background:#F9FDE1'>64</td>
 <td style='background:#F9FDE1'>69</td>
-<td style='background:#F9FDE1'>66</td>
-<td style='background:#F9FDE1'>55</td>
+<td style='background:#F9FDE1'>64</td>
 <td style='background:#F9FDE1'>75</td>
-<td style='background:#FFE9EA'>33</td>
-<td style='background:#F9FDE1'>60</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#FFE9EA'>35</td>
+<td style='background:#F9FDE1'>64</td>
 <td>0.08 €</td>
 <td>0.52 rps</td>
 </tr>
 <tr>
-<td>Yi 1.5 34B Chat f16 ⚠️</td>
-<td style='background:#F9FDE1'>47</td>
+<td>62. Yi 1.5 34B Chat f16 ⚠️</td>
+<td style='background:#FFE9EA'>47</td>
 <td style='background:#F9FDE1'>78</td>
 <td style='background:#F9FDE1'>70</td>
-<td style='background:#F9FDE1'>52</td>
+<td style='background:#F9FDE1'>74</td>
 <td style='background:#F9FDE1'>86</td>
-<td style='background:#FFE9EA'>28</td>
-<td style='background:#F9FDE1'>60</td>
+<td style='background:#FFE9EA'>26</td>
+<td style='background:#F9FDE1'>64</td>
 <td>1.18 €</td>
 <td>1.37 rps</td>
 </tr>
 <tr>
-<td>Mixtral 8x22B API (Instruct) ☁️</td>
+<td>63. Liquid: LFM 40B MoE ⚠️</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>65</td>
+<td style='background:#F9FDE1'>63</td>
+<td style='background:#F9FDE1'>82</td>
+<td style='background:#FFE9EA'>24</td>
+<td style='background:#F9FDE1'>63</td>
+<td>0.00 €</td>
+<td>1.45 rps</td>
+</tr>
+<tr>
+<td>64. Meta Llama 3.1 8B Instruct f16🦙</td>
+<td style='background:#F9FDE1'>57</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#FFE9EA'>32</td>
+<td style='background:#F9FDE1'>62</td>
+<td>0.45 €</td>
+<td>2.41 rps</td>
+</tr>
+<tr>
+<td>65. Qwen2 7B Instruct f32 ⚠️</td>
+<td style='background:#F9FDE1'>50</td>
+<td style='background:#F9FDE1'>81</td>
+<td style='background:#F9FDE1'>81</td>
+<td style='background:#F9FDE1'>61</td>
+<td style='background:#F9FDE1'>66</td>
+<td style='background:#FFE9EA'>31</td>
+<td style='background:#F9FDE1'>62</td>
+<td>0.46 €</td>
+<td>2.36 rps</td>
+</tr>
+<tr>
+<td>66. Claude 3 Sonnet ☁️</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#FFE9EA'>41</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#FFE9EA'>28</td>
+<td style='background:#F9FDE1'>61</td>
+<td>0.95 €</td>
+<td>0.85 rps</td>
+</tr>
+<tr>
+<td>67. Mistral Small v3/2409 ☁️</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#FFE9EA'>26</td>
+<td style='background:#F9FDE1'>61</td>
+<td>0.06 €</td>
+<td>0.81 rps</td>
+</tr>
+<tr>
+<td>68. Mistral Pixtral 12B ✅</td>
+<td style='background:#F9FDE1'>53</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>73</td>
+<td style='background:#F9FDE1'>63</td>
+<td style='background:#F9FDE1'>64</td>
+<td style='background:#FFE9EA'>40</td>
+<td style='background:#F9FDE1'>60</td>
+<td>0.03 €</td>
+<td>0.83 rps</td>
+</tr>
+<tr>
+<td>69. Mixtral 8x22B API (Instruct) ☁️</td>
 <td style='background:#F9FDE1'>53</td>
 <td style='background:#F9FDE1'>62</td>
-<td style='background:#F9FDE1'>66</td>
-<td style='background:#B6EECF'>94</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#B6EECF'>97</td>
 <td style='background:#F9FDE1'>75</td>
 <td style='background:#FFE9EA'>7</td>
-<td style='background:#F9FDE1'>60</td>
+<td style='background:#F9FDE1'>59</td>
 <td>0.17 €</td>
 <td>3.12 rps</td>
 </tr>
 <tr>
-<td>Codestral Mamba 7B v1 ✅</td>
+<td>70. Anthropic Claude Instant v1.2 ☁️</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#F9FDE1'>65</td>
+<td style='background:#F9FDE1'>77</td>
+<td style='background:#F9FDE1'>65</td>
+<td style='background:#FFE9EA'>16</td>
+<td style='background:#F9FDE1'>59</td>
+<td>2.10 €</td>
+<td>1.49 rps</td>
+</tr>
+<tr>
+<td>71. Codestral Mamba 7B v1 ✅</td>
 <td style='background:#F9FDE1'>53</td>
 <td style='background:#F9FDE1'>66</td>
-<td style='background:#F9FDE1'>54</td>
-<td style='background:#B6EECF'>94</td>
+<td style='background:#F9FDE1'>51</td>
+<td style='background:#B6EECF'>97</td>
 <td style='background:#F9FDE1'>71</td>
 <td style='background:#FFE9EA'>17</td>
 <td style='background:#F9FDE1'>59</td>
@@ -492,359 +888,407 @@
 <td>2.82 rps</td>
 </tr>
 <tr>
-<td>Meta Llama 3.1 8B Instruct f16🦙</td>
-<td style='background:#F9FDE1'>57</td>
-<td style='background:#F9FDE1'>74</td>
-<td style='background:#F9FDE1'>64</td>
-<td style='background:#F9FDE1'>52</td>
-<td style='background:#F9FDE1'>74</td>
-<td style='background:#FFE9EA'>34</td>
+<td>72. Inflection 3 Productivity ⚠️</td>
+<td style='background:#FFE9EA'>46</td>
 <td style='background:#F9FDE1'>59</td>
-<td>0.45 €</td>
-<td>2.41 rps</td>
-</tr>
-<tr>
-<td>Meta Llama 3.1 70B Instruct b8🦙</td>
-<td style='background:#F9FDE1'>60</td>
-<td style='background:#F9FDE1'>76</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#FFE9EA'>30</td>
-<td style='background:#F9FDE1'>81</td>
-<td style='background:#FFE9EA'>26</td>
-<td style='background:#F9FDE1'>58</td>
-<td>5.28 €</td>
-<td>0.31 rps</td>
-</tr>
-<tr>
-<td>Claude 3 Sonnet ☁️</td>
-<td style='background:#F9FDE1'>72</td>
-<td style='background:#FFE9EA'>41</td>
-<td style='background:#F9FDE1'>74</td>
-<td style='background:#F9FDE1'>52</td>
-<td style='background:#F9FDE1'>78</td>
-<td style='background:#FFE9EA'>30</td>
-<td style='background:#F9FDE1'>58</td>
-<td>0.95 €</td>
-<td>0.85 rps</td>
-</tr>
-<tr>
-<td>Mistral Large v1/2402 ☁️</td>
-<td style='background:#FFE9EA'>37</td>
-<td style='background:#FFE9EA'>49</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#F9FDE1'>84</td>
-<td style='background:#FFE9EA'>25</td>
-<td style='background:#F9FDE1'>58</td>
-<td>2.14 €</td>
-<td>2.11 rps</td>
-</tr>
-<tr>
-<td>Qwen2 7B Instruct f32 ⚠️</td>
-<td style='background:#F9FDE1'>50</td>
-<td style='background:#F9FDE1'>81</td>
-<td style='background:#F9FDE1'>81</td>
 <td style='background:#FFE9EA'>39</td>
-<td style='background:#F9FDE1'>66</td>
-<td style='background:#FFE9EA'>29</td>
-<td style='background:#F9FDE1'>58</td>
-<td>0.46 €</td>
-<td>2.36 rps</td>
-</tr>
-<tr>
-<td>Anthropic Claude Instant v1.2 ☁️</td>
-<td style='background:#F9FDE1'>58</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#F9FDE1'>66</td>
+<td style='background:#F9FDE1'>70</td>
+<td style='background:#F9FDE1'>79</td>
+<td style='background:#F9FDE1'>61</td>
 <td style='background:#F9FDE1'>59</td>
-<td style='background:#F9FDE1'>65</td>
-<td style='background:#FFE9EA'>14</td>
-<td style='background:#F9FDE1'>56</td>
-<td>2.10 €</td>
-<td>1.49 rps</td>
+<td>0.92 €</td>
+<td>0.17 rps</td>
 </tr>
 <tr>
-<td>Anthropic Claude v2.0 ☁️</td>
+<td>73. Anthropic Claude v2.0 ☁️</td>
 <td style='background:#F9FDE1'>63</td>
 <td style='background:#F9FDE1'>52</td>
 <td style='background:#F9FDE1'>55</td>
-<td style='background:#FFE9EA'>45</td>
+<td style='background:#F9FDE1'>67</td>
 <td style='background:#F9FDE1'>84</td>
-<td style='background:#FFE9EA'>35</td>
-<td style='background:#F9FDE1'>55</td>
+<td style='background:#FFE9EA'>34</td>
+<td style='background:#F9FDE1'>59</td>
 <td>2.19 €</td>
 <td>0.40 rps</td>
 </tr>
 <tr>
-<td>Cohere Command R ☁️</td>
+<td>74. Cohere Command R ☁️</td>
 <td style='background:#FFE9EA'>45</td>
 <td style='background:#F9FDE1'>66</td>
 <td style='background:#F9FDE1'>57</td>
-<td style='background:#F9FDE1'>55</td>
+<td style='background:#F9FDE1'>74</td>
 <td style='background:#F9FDE1'>84</td>
-<td style='background:#FFE9EA'>26</td>
-<td style='background:#F9FDE1'>55</td>
+<td style='background:#FFE9EA'>27</td>
+<td style='background:#F9FDE1'>59</td>
 <td>0.13 €</td>
 <td>2.50 rps</td>
 </tr>
 <tr>
-<td>Qwen1.5 7B Chat f16 ⚠️</td>
+<td>75. Amazon Nova Micro ⚠️</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>64</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>59</td>
+<td style='background:#FFE9EA'>31</td>
+<td style='background:#F9FDE1'>59</td>
+<td>0.01 €</td>
+<td>2.41 rps</td>
+</tr>
+<tr>
+<td>76. Qwen1.5 7B Chat f16 ⚠️</td>
 <td style='background:#F9FDE1'>56</td>
 <td style='background:#F9FDE1'>81</td>
 <td style='background:#F9FDE1'>60</td>
-<td style='background:#FFE9EA'>34</td>
+<td style='background:#F9FDE1'>56</td>
 <td style='background:#F9FDE1'>60</td>
 <td style='background:#FFE9EA'>36</td>
-<td style='background:#F9FDE1'>55</td>
+<td style='background:#F9FDE1'>58</td>
 <td>0.29 €</td>
 <td>3.76 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B OpenOrca f16 ☁️</td>
-<td style='background:#F9FDE1'>54</td>
-<td style='background:#F9FDE1'>57</td>
-<td style='background:#F9FDE1'>80</td>
-<td style='background:#FFE9EA'>21</td>
-<td style='background:#F9FDE1'>78</td>
-<td style='background:#FFE9EA'>26</td>
-<td style='background:#F9FDE1'>53</td>
-<td>0.41 €</td>
-<td>2.65 rps</td>
-</tr>
-<tr>
-<td>Anthropic Claude v2.1 ☁️</td>
-<td style='background:#FFE9EA'>29</td>
+<td>77. Mistral Large v1/2402 ☁️</td>
+<td style='background:#FFE9EA'>37</td>
+<td style='background:#FFE9EA'>49</td>
+<td style='background:#F9FDE1'>70</td>
+<td style='background:#F9FDE1'>83</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#FFE9EA'>25</td>
 <td style='background:#F9FDE1'>58</td>
-<td style='background:#F9FDE1'>59</td>
-<td style='background:#F9FDE1'>60</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#FFE9EA'>33</td>
-<td style='background:#F9FDE1'>52</td>
-<td>2.25 €</td>
-<td>0.35 rps</td>
+<td>0.58 €</td>
+<td>2.11 rps</td>
 </tr>
 <tr>
-<td>Qwen1.5 14B Chat f16 ⚠️</td>
+<td>78. Microsoft WizardLM 2 8x22B ⚠️</td>
+<td style='background:#F9FDE1'>48</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#F9FDE1'>79</td>
+<td style='background:#F9FDE1'>59</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#FFE9EA'>22</td>
+<td style='background:#F9FDE1'>58</td>
+<td>0.13 €</td>
+<td>0.70 rps</td>
+</tr>
+<tr>
+<td>79. Qwen1.5 14B Chat f16 ⚠️</td>
 <td style='background:#F9FDE1'>50</td>
 <td style='background:#F9FDE1'>58</td>
-<td style='background:#F9FDE1'>53</td>
-<td style='background:#FFE9EA'>49</td>
+<td style='background:#F9FDE1'>51</td>
+<td style='background:#F9FDE1'>72</td>
 <td style='background:#F9FDE1'>84</td>
-<td style='background:#FFE9EA'>17</td>
-<td style='background:#F9FDE1'>52</td>
+<td style='background:#FFE9EA'>22</td>
+<td style='background:#F9FDE1'>56</td>
 <td>0.36 €</td>
 <td>3.03 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B Instruct v0.1 f16 ☁️</td>
-<td style='background:#FFE9EA'>34</td>
-<td style='background:#F9FDE1'>71</td>
-<td style='background:#F9FDE1'>74</td>
-<td style='background:#FFE9EA'>44</td>
-<td style='background:#F9FDE1'>62</td>
-<td style='background:#FFE9EA'>21</td>
-<td style='background:#F9FDE1'>51</td>
-<td>0.75 €</td>
-<td>1.43 rps</td>
-</tr>
-<tr>
-<td>Meta Llama 3 70B Instruct b8🦙</td>
-<td style='background:#F9FDE1'>51</td>
-<td style='background:#F9FDE1'>72</td>
-<td style='background:#F9FDE1'>53</td>
-<td style='background:#FFE9EA'>29</td>
+<td>80. MistralAI Ministral 8B ✅</td>
+<td style='background:#F9FDE1'>56</td>
+<td style='background:#F9FDE1'>55</td>
+<td style='background:#FFE9EA'>41</td>
 <td style='background:#F9FDE1'>82</td>
-<td style='background:#FFE9EA'>18</td>
-<td style='background:#F9FDE1'>51</td>
-<td>6.97 €</td>
-<td>0.23 rps</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#FFE9EA'>30</td>
+<td style='background:#F9FDE1'>55</td>
+<td>0.02 €</td>
+<td>1.02 rps</td>
 </tr>
 <tr>
-<td>Llama2 13B Vicuna-1.5 f16🦙</td>
+<td>81. Anthropic Claude v2.1 ☁️</td>
+<td style='background:#FFE9EA'>29</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#F9FDE1'>59</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#F9FDE1'>75</td>
+<td style='background:#FFE9EA'>32</td>
+<td style='background:#F9FDE1'>55</td>
+<td>2.25 €</td>
+<td>0.35 rps</td>
+</tr>
+<tr>
+<td>82. Mistral 7B OpenOrca f16 ☁️</td>
+<td style='background:#F9FDE1'>54</td>
+<td style='background:#F9FDE1'>57</td>
+<td style='background:#F9FDE1'>76</td>
+<td style='background:#FFE9EA'>36</td>
+<td style='background:#F9FDE1'>78</td>
+<td style='background:#FFE9EA'>27</td>
+<td style='background:#F9FDE1'>55</td>
+<td>0.41 €</td>
+<td>2.65 rps</td>
+</tr>
+<tr>
+<td>83. MistralAI Ministral 3B ✅</td>
+<td style='background:#F9FDE1'>50</td>
+<td style='background:#FFE9EA'>48</td>
+<td style='background:#FFE9EA'>39</td>
+<td style='background:#F9FDE1'>89</td>
+<td style='background:#F9FDE1'>60</td>
+<td style='background:#FFE9EA'>41</td>
+<td style='background:#F9FDE1'>54</td>
+<td>0.01 €</td>
+<td>1.02 rps</td>
+</tr>
+<tr>
+<td>84. Llama2 13B Vicuna-1.5 f16🦙</td>
 <td style='background:#F9FDE1'>50</td>
 <td style='background:#FFE9EA'>37</td>
-<td style='background:#F9FDE1'>59</td>
-<td style='background:#FFE9EA'>39</td>
+<td style='background:#F9FDE1'>55</td>
+<td style='background:#F9FDE1'>62</td>
 <td style='background:#F9FDE1'>82</td>
-<td style='background:#F9FDE1'>38</td>
-<td style='background:#F9FDE1'>51</td>
+<td style='background:#FFE9EA'>37</td>
+<td style='background:#F9FDE1'>54</td>
 <td>0.99 €</td>
 <td>1.09 rps</td>
 </tr>
 <tr>
-<td>Codestral 22B v1 ✅</td>
-<td style='background:#FFE9EA'>38</td>
-<td style='background:#FFE9EA'>47</td>
-<td style='background:#F9FDE1'>55</td>
+<td>85. Mistral 7B Instruct v0.1 f16 ☁️</td>
+<td style='background:#FFE9EA'>34</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>69</td>
+<td style='background:#F9FDE1'>63</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#FFE9EA'>23</td>
+<td style='background:#F9FDE1'>54</td>
+<td>0.75 €</td>
+<td>1.43 rps</td>
+</tr>
+<tr>
+<td>86. Meta Llama 3.2 3B🦙</td>
+<td style='background:#F9FDE1'>52</td>
 <td style='background:#F9FDE1'>71</td>
 <td style='background:#F9FDE1'>66</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#FFE9EA'>44</td>
+<td style='background:#FFE9EA'>14</td>
+<td style='background:#F9FDE1'>53</td>
+<td>0.01 €</td>
+<td>1.25 rps</td>
+</tr>
+<tr>
+<td>87. Google Recurrent Gemma 9B IT f16 ⚠️</td>
+<td style='background:#F9FDE1'>58</td>
+<td style='background:#FFE9EA'>27</td>
+<td style='background:#F9FDE1'>71</td>
+<td style='background:#F9FDE1'>64</td>
+<td style='background:#F9FDE1'>56</td>
+<td style='background:#FFE9EA'>23</td>
+<td style='background:#F9FDE1'>50</td>
+<td>0.89 €</td>
+<td>1.21 rps</td>
+</tr>
+<tr>
+<td>88. Codestral 22B v1 ✅</td>
+<td style='background:#FFE9EA'>38</td>
+<td style='background:#FFE9EA'>47</td>
+<td style='background:#FFE9EA'>44</td>
+<td style='background:#F9FDE1'>84</td>
+<td style='background:#F9FDE1'>66</td>
 <td style='background:#FFE9EA'>13</td>
-<td style='background:#F9FDE1'>48</td>
-<td>0.30 €</td>
+<td style='background:#F9FDE1'>49</td>
+<td>0.06 €</td>
 <td>4.03 rps</td>
 </tr>
 <tr>
-<td>Llama2 13B Hermes f16🦙</td>
+<td>89. Qwen: QwQ 32B Preview ⚠️</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#FFE9EA'>32</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>52</td>
+<td style='background:#FFE9EA'>48</td>
+<td style='background:#FFE9EA'>40</td>
+<td style='background:#F9FDE1'>48</td>
+<td>0.05 €</td>
+<td>0.63 rps</td>
+</tr>
+<tr>
+<td>90. Llama2 13B Hermes f16🦙</td>
 <td style='background:#F9FDE1'>50</td>
 <td style='background:#FFE9EA'>24</td>
-<td style='background:#F9FDE1'>51</td>
-<td style='background:#F9FDE1'>61</td>
+<td style='background:#FFE9EA'>37</td>
+<td style='background:#F9FDE1'>75</td>
 <td style='background:#F9FDE1'>60</td>
-<td style='background:#F9FDE1'>43</td>
+<td style='background:#FFE9EA'>42</td>
 <td style='background:#F9FDE1'>48</td>
 <td>1.00 €</td>
 <td>1.07 rps</td>
 </tr>
 <tr>
-<td>Google Recurrent Gemma 9B IT f16 ⚠️</td>
-<td style='background:#F9FDE1'>58</td>
-<td style='background:#FFE9EA'>27</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#FFE9EA'>45</td>
-<td style='background:#F9FDE1'>56</td>
-<td style='background:#FFE9EA'>25</td>
-<td style='background:#F9FDE1'>48</td>
-<td>0.89 €</td>
-<td>1.21 rps</td>
-</tr>
-<tr>
-<td>Mistral Small v2/2402 ☁️</td>
-<td style='background:#FFE9EA'>33</td>
-<td style='background:#FFE9EA'>42</td>
-<td style='background:#F9FDE1'>57</td>
-<td style='background:#F9FDE1'>82</td>
-<td style='background:#F9FDE1'>56</td>
-<td style='background:#FFE9EA'>8</td>
-<td style='background:#F9FDE1'>46</td>
-<td>0.18 €</td>
-<td>3.21 rps</td>
-</tr>
-<tr>
-<td>Llama2 13B Hermes b8🦙</td>
-<td style='background:#FFE9EA'>41</td>
-<td style='background:#FFE9EA'>25</td>
-<td style='background:#FFE9EA'>49</td>
-<td style='background:#F9FDE1'>61</td>
-<td style='background:#F9FDE1'>60</td>
-<td style='background:#F9FDE1'>43</td>
-<td style='background:#F9FDE1'>46</td>
-<td>4.79 €</td>
-<td>0.22 rps</td>
-</tr>
-<tr>
-<td>Mistral Medium v1/2312 ☁️</td>
-<td style='background:#FFE9EA'>41</td>
-<td style='background:#FFE9EA'>43</td>
-<td style='background:#F9FDE1'>54</td>
-<td style='background:#F9FDE1'>59</td>
-<td style='background:#F9FDE1'>62</td>
-<td style='background:#FFE9EA'>12</td>
-<td style='background:#F9FDE1'>45</td>
-<td>0.81 €</td>
-<td>0.35 rps</td>
-</tr>
-<tr>
-<td>Mistral Small v1/2312 (Mixtral) ☁️</td>
-<td style='background:#FFE9EA'>10</td>
-<td style='background:#F9FDE1'>67</td>
-<td style='background:#F9FDE1'>76</td>
-<td style='background:#F9FDE1'>51</td>
-<td style='background:#F9FDE1'>56</td>
-<td style='background:#FFE9EA'>8</td>
-<td style='background:#F9FDE1'>45</td>
-<td>0.19 €</td>
-<td>2.21 rps</td>
-</tr>
-<tr>
-<td>IBM Granite 34B Code Instruct f16 ☁️</td>
+<td>91. IBM Granite 34B Code Instruct f16 ☁️</td>
 <td style='background:#F9FDE1'>63</td>
 <td style='background:#FFE9EA'>49</td>
-<td style='background:#FFE9EA'>40</td>
-<td style='background:#FFE9EA'>44</td>
+<td style='background:#FFE9EA'>34</td>
+<td style='background:#F9FDE1'>67</td>
 <td style='background:#F9FDE1'>57</td>
-<td style='background:#FFE9EA'>5</td>
-<td style='background:#FFE9EA'>43</td>
+<td style='background:#FFE9EA'>7</td>
+<td style='background:#FFE9EA'>46</td>
 <td>1.07 €</td>
 <td>1.51 rps</td>
 </tr>
 <tr>
-<td>Mistral Tiny v1/2312 (7B Instruct v0.2) ☁️</td>
-<td style='background:#FFE9EA'>22</td>
-<td style='background:#FFE9EA'>47</td>
-<td style='background:#F9FDE1'>66</td>
+<td>92. Meta Llama 3.2 1B🦙</td>
+<td style='background:#FFE9EA'>32</td>
 <td style='background:#FFE9EA'>40</td>
-<td style='background:#F9FDE1'>62</td>
-<td style='background:#FFE9EA'>8</td>
-<td style='background:#FFE9EA'>41</td>
-<td>0.05 €</td>
-<td>2.39 rps</td>
+<td style='background:#FFE9EA'>33</td>
+<td style='background:#F9FDE1'>53</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>51</td>
+<td style='background:#FFE9EA'>46</td>
+<td>0.02 €</td>
+<td>1.69 rps</td>
 </tr>
 <tr>
-<td>Llama2 13B Puffin f16🦙</td>
+<td>93. Mistral Small v2/2402 ☁️</td>
+<td style='background:#FFE9EA'>33</td>
+<td style='background:#FFE9EA'>42</td>
+<td style='background:#FFE9EA'>45</td>
+<td style='background:#F9FDE1'>88</td>
+<td style='background:#F9FDE1'>56</td>
+<td style='background:#FFE9EA'>8</td>
+<td style='background:#FFE9EA'>46</td>
+<td>0.06 €</td>
+<td>3.21 rps</td>
+</tr>
+<tr>
+<td>94. Mistral Small v1/2312 (Mixtral) ☁️</td>
+<td style='background:#FFE9EA'>10</td>
+<td style='background:#F9FDE1'>67</td>
+<td style='background:#F9FDE1'>63</td>
+<td style='background:#F9FDE1'>65</td>
+<td style='background:#F9FDE1'>56</td>
+<td style='background:#FFE9EA'>8</td>
+<td style='background:#FFE9EA'>45</td>
+<td>0.06 €</td>
+<td>2.21 rps</td>
+</tr>
+<tr>
+<td>95. DBRX 132B Instruct ⚠️</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#FFE9EA'>39</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#F9FDE1'>74</td>
+<td style='background:#F9FDE1'>59</td>
+<td style='background:#FFE9EA'>10</td>
+<td style='background:#FFE9EA'>45</td>
+<td>0.26 €</td>
+<td>1.31 rps</td>
+</tr>
+<tr>
+<td>96. NVIDIA Llama 3.1 Nemotron 70B Instruct🦙</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#F9FDE1'>54</td>
+<td style='background:#FFE9EA'>25</td>
+<td style='background:#F9FDE1'>72</td>
+<td style='background:#FFE9EA'>28</td>
+<td style='background:#FFE9EA'>21</td>
+<td style='background:#FFE9EA'>45</td>
+<td>0.09 €</td>
+<td>0.53 rps</td>
+</tr>
+<tr>
+<td>97. Mistral Medium v1/2312 ☁️</td>
+<td style='background:#FFE9EA'>41</td>
+<td style='background:#FFE9EA'>43</td>
+<td style='background:#FFE9EA'>44</td>
+<td style='background:#F9FDE1'>59</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#FFE9EA'>12</td>
+<td style='background:#FFE9EA'>44</td>
+<td>0.81 €</td>
+<td>0.35 rps</td>
+</tr>
+<tr>
+<td>98. Microsoft WizardLM 2 7B ⚠️</td>
+<td style='background:#F9FDE1'>53</td>
+<td style='background:#FFE9EA'>34</td>
+<td style='background:#FFE9EA'>42</td>
+<td style='background:#F9FDE1'>66</td>
+<td style='background:#F9FDE1'>53</td>
+<td style='background:#FFE9EA'>13</td>
+<td style='background:#FFE9EA'>43</td>
+<td>0.02 €</td>
+<td>0.89 rps</td>
+</tr>
+<tr>
+<td>99. Llama2 13B Puffin f16🦙</td>
 <td style='background:#FFE9EA'>37</td>
 <td style='background:#FFE9EA'>15</td>
-<td style='background:#FFE9EA'>48</td>
-<td style='background:#FFE9EA'>48</td>
+<td style='background:#FFE9EA'>44</td>
+<td style='background:#F9FDE1'>67</td>
 <td style='background:#F9FDE1'>56</td>
-<td style='background:#F9FDE1'>41</td>
-<td style='background:#FFE9EA'>41</td>
+<td style='background:#FFE9EA'>39</td>
+<td style='background:#FFE9EA'>43</td>
 <td>4.70 €</td>
 <td>0.23 rps</td>
 </tr>
 <tr>
-<td>Llama2 13B Puffin b8🦙</td>
-<td style='background:#FFE9EA'>37</td>
-<td style='background:#FFE9EA'>14</td>
+<td>100. Mistral Tiny v1/2312 (7B Instruct v0.2) ☁️</td>
+<td style='background:#FFE9EA'>22</td>
 <td style='background:#FFE9EA'>47</td>
-<td style='background:#FFE9EA'>46</td>
-<td style='background:#F9FDE1'>56</td>
-<td style='background:#F9FDE1'>39</td>
-<td style='background:#FFE9EA'>40</td>
-<td>8.34 €</td>
-<td>0.13 rps</td>
+<td style='background:#F9FDE1'>59</td>
+<td style='background:#F9FDE1'>53</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#FFE9EA'>8</td>
+<td style='background:#FFE9EA'>42</td>
+<td>0.05 €</td>
+<td>2.39 rps</td>
 </tr>
 <tr>
-<td>Meta Llama2 13B chat f16🦙</td>
+<td>101. Gemma 2 9B IT ⚠️</td>
+<td style='background:#FFE9EA'>45</td>
+<td style='background:#FFE9EA'>25</td>
+<td style='background:#FFE9EA'>47</td>
+<td style='background:#FFE9EA'>36</td>
+<td style='background:#F9FDE1'>68</td>
+<td style='background:#FFE9EA'>13</td>
+<td style='background:#FFE9EA'>39</td>
+<td>0.02 €</td>
+<td>0.88 rps</td>
+</tr>
+<tr>
+<td>102. Meta Llama2 13B chat f16🦙</td>
 <td style='background:#FFE9EA'>22</td>
 <td style='background:#FFE9EA'>38</td>
 <td style='background:#FFE9EA'>17</td>
-<td style='background:#FFE9EA'>45</td>
+<td style='background:#F9FDE1'>65</td>
 <td style='background:#F9FDE1'>75</td>
-<td style='background:#FFE9EA'>8</td>
-<td style='background:#FFE9EA'>34</td>
+<td style='background:#FFE9EA'>6</td>
+<td style='background:#FFE9EA'>37</td>
 <td>0.75 €</td>
 <td>1.44 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B Zephyr-β f16 ✅</td>
+<td>103. Mistral 7B Zephyr-β f16 ✅</td>
 <td style='background:#FFE9EA'>37</td>
 <td style='background:#FFE9EA'>34</td>
-<td style='background:#F9FDE1'>55</td>
-<td style='background:#FFE9EA'>44</td>
+<td style='background:#FFE9EA'>46</td>
+<td style='background:#F9FDE1'>62</td>
 <td style='background:#FFE9EA'>29</td>
 <td style='background:#FFE9EA'>4</td>
-<td style='background:#FFE9EA'>34</td>
+<td style='background:#FFE9EA'>35</td>
 <td>0.46 €</td>
 <td>2.34 rps</td>
 </tr>
 <tr>
-<td>Meta Llama2 13B chat b8🦙</td>
+<td>104. Meta Llama2 7B chat f16🦙</td>
 <td style='background:#FFE9EA'>22</td>
-<td style='background:#FFE9EA'>38</td>
-<td style='background:#FFE9EA'>15</td>
-<td style='background:#FFE9EA'>45</td>
-<td style='background:#F9FDE1'>75</td>
-<td style='background:#FFE9EA'>6</td>
 <td style='background:#FFE9EA'>33</td>
-<td>3.27 €</td>
-<td>0.33 rps</td>
+<td style='background:#FFE9EA'>20</td>
+<td style='background:#F9FDE1'>62</td>
+<td style='background:#FFE9EA'>50</td>
+<td style='background:#FFE9EA'>18</td>
+<td style='background:#FFE9EA'>34</td>
+<td>0.56 €</td>
+<td>1.93 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B Notus-v1 f16 ⚠️</td>
+<td>105. Mistral 7B Notus-v1 f16 ⚠️</td>
 <td style='background:#FFE9EA'>10</td>
 <td style='background:#F9FDE1'>54</td>
-<td style='background:#FFE9EA'>41</td>
-<td style='background:#FFE9EA'>41</td>
+<td style='background:#FFE9EA'>25</td>
+<td style='background:#F9FDE1'>60</td>
 <td style='background:#FFE9EA'>48</td>
 <td style='background:#FFE9EA'>4</td>
 <td style='background:#FFE9EA'>33</td>
@@ -852,35 +1296,23 @@
 <td>1.43 rps</td>
 </tr>
 <tr>
-<td>Orca 2 13B f16 ⚠️</td>
+<td>106. Orca 2 13B f16 ⚠️</td>
 <td style='background:#FFE9EA'>18</td>
 <td style='background:#FFE9EA'>22</td>
-<td style='background:#FFE9EA'>45</td>
-<td style='background:#FFE9EA'>22</td>
-<td style='background:#F9FDE1'>67</td>
-<td style='background:#FFE9EA'>19</td>
 <td style='background:#FFE9EA'>32</td>
+<td style='background:#FFE9EA'>29</td>
+<td style='background:#F9FDE1'>67</td>
+<td style='background:#FFE9EA'>20</td>
+<td style='background:#FFE9EA'>31</td>
 <td>0.95 €</td>
 <td>1.14 rps</td>
 </tr>
 <tr>
-<td>Meta Llama2 7B chat f16🦙</td>
-<td style='background:#FFE9EA'>22</td>
-<td style='background:#FFE9EA'>33</td>
-<td style='background:#FFE9EA'>20</td>
-<td style='background:#FFE9EA'>42</td>
-<td style='background:#FFE9EA'>50</td>
-<td style='background:#FFE9EA'>20</td>
-<td style='background:#FFE9EA'>31</td>
-<td>0.56 €</td>
-<td>1.93 rps</td>
-</tr>
-<tr>
-<td>Mistral 7B Instruct v0.2 f16 ☁️</td>
+<td>107. Mistral 7B Instruct v0.2 f16 ☁️</td>
 <td style='background:#FFE9EA'>11</td>
 <td style='background:#FFE9EA'>30</td>
-<td style='background:#F9FDE1'>65</td>
-<td style='background:#FFE9EA'>13</td>
+<td style='background:#F9FDE1'>54</td>
+<td style='background:#FFE9EA'>25</td>
 <td style='background:#F9FDE1'>58</td>
 <td style='background:#FFE9EA'>8</td>
 <td style='background:#FFE9EA'>31</td>
@@ -888,23 +1320,35 @@
 <td>1.12 rps</td>
 </tr>
 <tr>
-<td>Mistral 7B v0.1 f16 ☁️</td>
+<td>108. Mistral 7B v0.1 f16 ☁️</td>
 <td style='background:#FFE9EA'>0</td>
 <td style='background:#FFE9EA'>9</td>
-<td style='background:#F9FDE1'>56</td>
-<td style='background:#FFE9EA'>42</td>
+<td style='background:#FFE9EA'>48</td>
+<td style='background:#F9FDE1'>63</td>
 <td style='background:#F9FDE1'>52</td>
 <td style='background:#FFE9EA'>12</td>
-<td style='background:#FFE9EA'>29</td>
+<td style='background:#FFE9EA'>31</td>
 <td>0.87 €</td>
 <td>1.23 rps</td>
 </tr>
 <tr>
-<td>Microsoft Phi 3 Medium 4K Instruct f16 ⚠️</td>
+<td>109. Google Gemma 2B IT f16 ⚠️</td>
+<td style='background:#FFE9EA'>33</td>
+<td style='background:#FFE9EA'>28</td>
+<td style='background:#FFE9EA'>16</td>
+<td style='background:#FFE9EA'>47</td>
+<td style='background:#FFE9EA'>15</td>
+<td style='background:#FFE9EA'>20</td>
+<td style='background:#FFE9EA'>27</td>
+<td>0.30 €</td>
+<td>3.54 rps</td>
+</tr>
+<tr>
+<td>110. Microsoft Phi 3 Medium 4K Instruct 14B f16 ⚠️</td>
 <td style='background:#FFE9EA'>5</td>
 <td style='background:#FFE9EA'>34</td>
-<td style='background:#F9FDE1'>52</td>
-<td style='background:#FFE9EA'>13</td>
+<td style='background:#FFE9EA'>30</td>
+<td style='background:#FFE9EA'>32</td>
 <td style='background:#FFE9EA'>47</td>
 <td style='background:#FFE9EA'>8</td>
 <td style='background:#FFE9EA'>26</td>
@@ -912,127 +1356,191 @@
 <td>1.32 rps</td>
 </tr>
 <tr>
-<td>Google Gemma 2B IT f16 ⚠️</td>
-<td style='background:#FFE9EA'>33</td>
-<td style='background:#FFE9EA'>28</td>
-<td style='background:#FFE9EA'>18</td>
-<td style='background:#FFE9EA'>39</td>
-<td style='background:#FFE9EA'>15</td>
-<td style='background:#FFE9EA'>20</td>
-<td style='background:#FFE9EA'>25</td>
-<td>0.30 €</td>
-<td>3.54 rps</td>
-</tr>
-<tr>
-<td>Orca 2 7B f16 ⚠️</td>
+<td>111. Orca 2 7B f16 ⚠️</td>
 <td style='background:#FFE9EA'>22</td>
 <td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>31</td>
-<td style='background:#FFE9EA'>18</td>
+<td style='background:#FFE9EA'>26</td>
+<td style='background:#FFE9EA'>26</td>
 <td style='background:#F9FDE1'>52</td>
 <td style='background:#FFE9EA'>4</td>
-<td style='background:#FFE9EA'>21</td>
+<td style='background:#FFE9EA'>22</td>
 <td>0.78 €</td>
 <td>1.38 rps</td>
 </tr>
 <tr>
-<td>Google Gemma 7B IT f16 ⚠️</td>
+<td>112. Google Gemma 7B IT f16 ⚠️</td>
 <td style='background:#FFE9EA'>0</td>
 <td style='background:#FFE9EA'>0</td>
 <td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>9</td>
+<td style='background:#FFE9EA'>6</td>
 <td style='background:#F9FDE1'>62</td>
 <td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>12</td>
+<td style='background:#FFE9EA'>11</td>
 <td>0.99 €</td>
 <td>1.08 rps</td>
 </tr>
 <tr>
-<td>Meta Llama2 7B f16🦙</td>
+<td>113. Meta Llama2 7B f16🦙</td>
 <td style='background:#FFE9EA'>0</td>
 <td style='background:#FFE9EA'>5</td>
-<td style='background:#FFE9EA'>28</td>
+<td style='background:#FFE9EA'>22</td>
 <td style='background:#FFE9EA'>3</td>
 <td style='background:#FFE9EA'>28</td>
 <td style='background:#FFE9EA'>2</td>
-<td style='background:#FFE9EA'>11</td>
+<td style='background:#FFE9EA'>10</td>
 <td>0.95 €</td>
 <td>1.13 rps</td>
 </tr>
 <tr>
-<td>Yi 1.5 9B Chat f16 ⚠️</td>
+<td>114. Yi 1.5 9B Chat f16 ⚠️</td>
 <td style='background:#FFE9EA'>0</td>
 <td style='background:#FFE9EA'>4</td>
-<td style='background:#FFE9EA'>32</td>
-<td style='background:#FFE9EA'>8</td>
+<td style='background:#FFE9EA'>29</td>
+<td style='background:#FFE9EA'>17</td>
 <td style='background:#FFE9EA'>0</td>
 <td style='background:#FFE9EA'>8</td>
-<td style='background:#FFE9EA'>9</td>
+<td style='background:#FFE9EA'>10</td>
 <td>1.41 €</td>
 <td>0.76 rps</td>
-</tr>
-<tr>
-<td>Google Gemma 2 9B IT f16 🔄</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Google Gemma 2 27B IT f16 🔄</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td style='background:#FFE9EA'>0</td>
-<td></td>
-<td></td>
 </tr>
 </tbody>
 </table>
 
-    <script>
-   document.addEventListener('DOMContentLoaded', function() {
-            const filterInput = document.getElementById('filterInput');
-            const table = document.getElementById('benchmarkTable');
-            const rows = table.getElementsByTagName('tr');
+<script>
+document.addEventListener('DOMContentLoaded', function() {
 
-            filterInput.addEventListener('input', function() {
-                const filterTerms = this.value.toLowerCase().split(' ').filter(term => term.trim() !== '');
-                
-                for (let i = 1; i < rows.length; i++) {
-                    const row = rows[i];
-                    const text = row.textContent.toLowerCase();
-                    let shouldShow = true;
+    const filterInput = document.getElementById('filterInput');
+    const highlightInput = document.getElementById('highlightInput');
+    const table = document.getElementById('benchmarkTable');
+    const rows = table.getElementsByTagName('tr');
+    
+    
+    
+    // Get the checkbox element
+    const toggleCostColumn = document.getElementById('toggleCostColumn');
 
-                    for (const term of filterTerms) {
-                        if (term.startsWith('-')) {
-                            // Exclude term
-                            if (text.includes(term.slice(1))) {
-                                shouldShow = false;
-                                break;
-                            }
-                        } else {
-                            // Include term
-                            if (!text.includes(term)) {
-                                shouldShow = false;
-                                break;
-                            }
-                        }
+    // Add event listener to the checkbox
+ toggleCostColumn.addEventListener('change', function() {
+        const isChecked = this.checked;
+        const table = document.getElementById('benchmarkTable');
+        const ths = table.getElementsByTagName('th');
+        let costColumnIndex = -1;
+
+        // Find the index of the "Cost" column
+        for (let i = 0; i < ths.length; i++) {
+            if (ths[i].textContent.trim() === 'Cost') {
+                costColumnIndex = i;
+                ths[i].style.display = isChecked ? 'none' : '';
+                break;
+            }
+        }
+
+        if (costColumnIndex === -1) return; // "Cost" column not found
+
+        // Hide/show the "Cost" cells in each row
+        const rows = table.getElementsByTagName('tr');
+        for (let row of rows) {
+            if (row.cells.length > costColumnIndex) {
+                row.cells[costColumnIndex].style.display = isChecked ? 'none' : '';
+            }
+        }
+    });
+    
+     toggleSpeedColumn.addEventListener('change', function() {
+        const isChecked = this.checked;
+        const table = document.getElementById('benchmarkTable');
+        const ths = table.getElementsByTagName('th');
+        let speedColumnIndex = -1;
+
+        // Find the index of the "Speed" column
+        for (let i = 0; i < ths.length; i++) {
+            if (ths[i].textContent.trim() === 'Speed') {
+                speedColumnIndex = i;
+                ths[i].style.display = isChecked ? 'none' : '';
+                break;
+            }
+        }
+
+        if (speedColumnIndex === -1) return; // "Cost" column not found
+
+        // Hide/show the "Cost" cells in each row
+        const rows = table.getElementsByTagName('tr');
+        for (let row of rows) {
+            if (row.cells.length > speedColumnIndex) {
+                row.cells[speedColumnIndex].style.display = isChecked ? 'none' : '';
+            }
+        }
+    });
+    
+    
+        
+          // Highlighting logic
+    highlightInput.addEventListener('input', function() {
+ const filterTerms = this.value.toLowerCase().split(' ').filter(term => term.trim() !== '');
+        
+        for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            
+            // format to #i
+            const id = ` #${i}#`;
+            const text = row.cells[0].textContent.toLowerCase() + id;
+            let shouldHighlight = false;
+
+            for (const term of filterTerms) {
+                if (term.startsWith('-')) {
+                    // Exclude term
+                    if (text.includes(term.slice(1))) {
+                        shouldHighlight = false;
+                        break;
                     }
-
-                    row.style.display = shouldShow ? '' : 'none';
+                } else {
+                    // Include term
+                    if (text.includes(term)) {
+                        shouldHighlight = true;
+                        break;
+                    }
                 }
-            });
-        });
-    </script>
+            }
+            
+            // color = #EE7A30
+
+            if (shouldHighlight) {
+                row.classList.add('highlighted');
+            } else {
+                row.classList.remove('highlighted');
+            }
+        }
+    });
+
+    filterInput.addEventListener('input', function() {
+        const filterTerms = this.value.toLowerCase().split(' ').filter(term => term.trim() !== '');
+        
+        for (let i = 1; i < rows.length; i++) {
+            const row = rows[i];
+            const text = row.textContent.toLowerCase();
+            let shouldShow = true;
+
+            for (const term of filterTerms) {
+                if (term.startsWith('-')) {
+                    // Exclude term
+                    if (text.includes(term.slice(1))) {
+                        shouldShow = false;
+                        break;
+                    }
+                } else {
+                    // Include term
+                    if (!text.includes(term)) {
+                        shouldShow = false;
+                        break;
+                    }
+                }
+            }
+
+            row.style.display = shouldShow ? '' : 'none';
+        }
+    });
+    });
+</script>
 </article>
 </body>
 </html>
